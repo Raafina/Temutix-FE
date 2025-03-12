@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
             "flex min-h-screen min-w-full flex-col items-center justify-center gap-10 py-10 lg:py-0",
           )}
         >
-          <Component {...pageProps} />;
+          <Component {...pageProps} />
         </main>
       </HeroUIProvider>
     </QueryClientProvider>
