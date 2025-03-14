@@ -19,7 +19,7 @@ const Register = () => {
   console.log(errors);
   return (
     <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row lg:gap-20">
-      <div className="w-full flex-col items-center justify-center gap-10 hidden md:flex lg:w-1/3">
+      <div className="hidden w-full flex-col items-center justify-center gap-10 md:flex lg:w-1/3">
         <Image
           src="/images/general/logo.svg"
           alt="logo"
@@ -37,19 +37,13 @@ const Register = () => {
       </div>
       <div>
         <Card>
-          <CardBody className="p-8">
+          <CardBody className="gap-4 p-8">
             <h2 className="text-xl font-bold text-danger">Create Account</h2>
-            <p className="mb-4 text-sm">
-              Have an account?
-              <Link href="/auth/login" className="text-danger">
-                Login
-              </Link>
-              {errors.root && (
-                <p className="font medium mb-2 text-danger">
-                  {errors?.root?.message}
-                </p>
-              )}
-            </p>
+            {errors.root && (
+              <p className="font medium mb-2 text-danger">
+                {errors?.root?.message}
+              </p>
+            )}
             <form
               className={cn(
                 "flex w-80 flex-col gap-2",
@@ -161,6 +155,15 @@ const Register = () => {
                   "Register"
                 )}
               </Button>
+              <p className="mb-4 text-center text-sm">
+                Alrady have an account?{" "}
+                <Link
+                  href="/auth/login"
+                  className="text-danger hover:font-bold hover:underline"
+                >
+                  Login
+                </Link>
+              </p>
             </form>
           </CardBody>
         </Card>
