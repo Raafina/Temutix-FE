@@ -9,7 +9,7 @@ import { cn } from "@/utils/cn";
 const Login = () => {
   const {
     isVisible,
-    handleVisibilityPassword,
+    toggleVisibility,
     control,
     handleSubmit,
     handleLogin,
@@ -80,7 +80,7 @@ const Login = () => {
                       <button
                         type="button"
                         className="focus:outline-none"
-                        onClick={() => handleVisibilityPassword()}
+                        onClick={toggleVisibility}
                       >
                         {isVisible ? <FaEye /> : <FaEyeSlash />}
                       </button>
