@@ -1,6 +1,8 @@
 import { Button, Listbox, ListboxItem } from "@heroui/react";
 import { signOut } from "next-auth/react";
+import { JSX } from "react";
 import { CiLogout } from "react-icons/ci";
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { cn } from "@/utils/cn";
@@ -57,6 +59,8 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
                 textValue={item.label}
                 aria-labelledby={item.label}
                 aria-describedby={item.label}
+                as={Link}
+                href={item.href}
               >
                 <p className="text-small">{item.label}</p>
               </ListboxItem>
