@@ -1,20 +1,29 @@
 import DataTable from "@/components/ui/DataTable";
 import { useRouter } from "next/router";
-import {
-  Button,
-  Dropdown,
-  DropdownMenu,
-  DropdownTrigger,
-  DropdownItem,
-} from "@heroui/react";
+import { useDisclosure } from "@heroui/react";
+import useChangeUrl from "@/hooks/useChangeUrl";
+import useCategory from "./useCategory";
 import Image from "next/image";
-import { Key, ReactNode, useCallback } from "react";
-import { CiMenuKebab } from "react-icons/ci";
+import { Key, ReactNode, useCallback, useEffect } from "react";
 import { COLUMN_LIST_CATEGORY } from "./Category.constants";
-import LIMIT_LISTS from "@/list.constants";
+import DropdownAction from "@/components/commons/DropdownAction";
+import AddCategoryModal from "./AddCategoryModal";
+import DeleteCategoryModal from "./DeleteCategoryModal";
 
 const Category = () => {
-  const { push } = useRouter();
+  const { push, isReady, query } = useRouter();
+  const { setUrl } = useChangeUrl();
+  const {
+    dataCategory,
+    isLoadingCategory,
+    isRefetchingCategory,
+    selectedId,
+    setSelectedId,
+    refetchCategory,
+  } = useCategory();
+
+  const addCategoryModal = useDisclosure();
+  const deleteCategoryModal = useDisclosure();
 
   const renderCell = useCallback(
     (category: Record<string, unknown>, columnKey: Key) => {
@@ -26,28 +35,15 @@ const Category = () => {
           );
         case "actions":
           return (
-            <Dropdown>
-              <DropdownTrigger>
-                <Button isIconOnly size="sm" variant="light">
-                  <CiMenuKebab className="text-default-700" />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem
-                  key="detail-category-buton"
-                  onPress={() => push(`/admin/category/${category.id}`)}
-                >
-                  Detail Category
-                </DropdownItem>
-                <DropdownItem
-                  key="delete-category"
-                  className="text-danger-500"
-                  onPress={() => push(`/admin/category/${category.id}`)}
-                >
-                  Detail Category
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            <DropdownAction
+              onPressButtonDetail={() =>
+                push(`/admin/category/${category._id}`)
+              }
+              onPressButtonDelete={() => {
+                setSelectedId(`${category._id}`);
+                deleteCategoryModal.onOpen();
+              }}
+            />
           );
         default:
           return cellValue as ReactNode;
@@ -56,29 +52,37 @@ const Category = () => {
     [push],
   );
 
+  useEffect(() => {
+    if (isReady) {
+      setUrl();
+    }
+  }, [isReady]);
+
   return (
     <section>
-      <DataTable
-        columns={COLUMN_LIST_CATEGORY}
-        data={[
-          {
-            _id: 123,
-            name: "Category 1",
-            description: "Description 1",
-            icon: "/images/general/logo.png",
-          },
-        ]}
-        emptyContent="Category is empty"
-        limit={LIMIT_LISTS[0].label}
-        onChangeLimit={() => {}}
-        currentPage={1}
-        onChangePage={() => {}}
-        onChangeSearch={() => {}}
-        onClearSearch={() => {}}
-        buttonTopContentLabel="Create Category"
-        onClickButtonTopContent={() => {}}
-        renderCell={renderCell}
-        totalPages={100}
+      {Object.keys(query).length > 0 && (
+        <DataTable
+          buttonTopContentLabel="Create Category"
+          columns={COLUMN_LIST_CATEGORY}
+          data={dataCategory?.data || []}
+          emptyContent="Category is empty"
+          isLoading={isLoadingCategory || isRefetchingCategory}
+          onClickButtonTopContent={addCategoryModal.onOpen}
+          renderCell={renderCell}
+          totalPages={dataCategory?.pagination.totalPages}
+        />
+      )}
+
+      <AddCategoryModal
+        {...addCategoryModal}
+        refetchCategory={refetchCategory}
+      />
+
+      <DeleteCategoryModal
+        {...deleteCategoryModal}
+        selectedId={selectedId}
+        setSelectedId={setSelectedId}
+        refetchCategory={refetchCategory}
       />
     </section>
   );

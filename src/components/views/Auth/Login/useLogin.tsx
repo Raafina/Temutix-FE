@@ -34,7 +34,7 @@ const useLogin = () => {
     const result = await signIn("credentials", {
       ...payload,
       redirect: false,
-      callbackUrl,
+      callbackUrl: "/admin/dashboard",
     });
     if (result?.error && result?.status === 401) {
       throw new Error("Your login credentials are incorrect");

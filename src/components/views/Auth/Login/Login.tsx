@@ -16,7 +16,6 @@ const Login = () => {
     isPendingLogin,
     errors,
   } = useLogin();
-  console.log(errors);
   return (
     <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row lg:gap-20">
       <div className="hidden w-full flex-col items-center justify-center gap-10 md:flex lg:w-1/3">
@@ -61,7 +60,7 @@ const Login = () => {
                     label="Email or Username"
                     variant="bordered"
                     autoComplete="off"
-                    isInvalid={errors.identifier !== undefined} // if errors identifier, call it isInvalid
+                    isInvalid={errors.identifier !== undefined}
                     errorMessage={errors.identifier?.message}
                   />
                 )}

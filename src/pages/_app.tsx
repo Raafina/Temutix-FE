@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { cn } from "@/utils/cn";
+import AppShell from "@/components/commons/AppShell";
+import { ToasterProvider } from "@/contexts/ToasterContext";
 import { HeroUIProvider } from "@heroui/react";
-import { Inter } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SessionProvider } from "next-auth/react";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,9 +28,11 @@ export default function App({
     <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>
         <HeroUIProvider>
-          <main className={cn(inter.className)}>
-            <Component {...pageProps} />
-          </main>
+          <ToasterProvider>
+            <AppShell>
+              <Component {...pageProps} />
+            </AppShell>
+          </ToasterProvider>
         </HeroUIProvider>
       </QueryClientProvider>
     </SessionProvider>
