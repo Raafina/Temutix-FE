@@ -59,7 +59,7 @@ const DeleteCategoryModal = (props: PropTypes) => {
         </ModalBody>
         <ModalFooter>
           <Button
-            color="danger"
+            color="default"
             variant="flat"
             onPress={() => {
               onClose();
@@ -70,7 +70,7 @@ const DeleteCategoryModal = (props: PropTypes) => {
             Cancel
           </Button>
           <Button
-            color="danger"
+            color="secondary"
             type="submit"
             disabled={isPendingMutateDeleteCategory}
             onPress={() => mutateDeleteCategory(selectedId)}

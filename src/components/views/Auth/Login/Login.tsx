@@ -37,9 +37,9 @@ const Login = () => {
       <div>
         <Card>
           <CardBody className="gap-4 p-8">
-            <h2 className="text-xl font-bold text-danger">Login</h2>
+            <h2 className="text-xl font-bold text-secondary">Login</h2>
             {errors.root && (
-              <p className="font medium mb-2 text-danger">
+              <p className="font medium mb-2 text-secondary">
                 {errors?.root?.message}
               </p>
             )}
@@ -90,7 +90,7 @@ const Login = () => {
                 )}
               />
 
-              <Button color="danger" size="lg" type="submit">
+              <Button color="secondary" size="lg" type="submit">
                 {isPendingLogin ? <Spinner color="white" size="sm" /> : "Login"}
               </Button>
             </form>
@@ -98,7 +98,7 @@ const Login = () => {
               Don&apos;t have an account?{" "}
               <Link
                 href="/auth/register"
-                className="text-danger hover:font-bold hover:underline"
+                className="text-secondary hover:font-bold hover:underline"
               >
                 Register Here
               </Link>

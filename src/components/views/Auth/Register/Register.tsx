@@ -38,9 +38,9 @@ const Register = () => {
       <div>
         <Card>
           <CardBody className="gap-4 p-8">
-            <h2 className="text-xl font-bold text-danger">Create Account</h2>
+            <h2 className="text-xl font-bold text-secondary">Create Account</h2>
             {errors.root && (
-              <p className="font medium mb-2 text-danger">
+              <p className="font medium mb-2 text-red-500">
                 {errors?.root?.message}
               </p>
             )}
@@ -148,7 +148,7 @@ const Register = () => {
                   />
                 )}
               />
-              <Button color="danger" size="lg" type="submit">
+              <Button color="secondary" size="lg" type="submit">
                 {isPendingRegister ? (
                   <Spinner color="white" size="sm" />
                 ) : (
@@ -159,7 +159,7 @@ const Register = () => {
                 Alrady have an account?{" "}
                 <Link
                   href="/auth/login"
-                  className="text-danger hover:font-bold hover:underline"
+                  className="text-secondary hover:font-bold hover:underline"
                 >
                   Login
                 </Link>
