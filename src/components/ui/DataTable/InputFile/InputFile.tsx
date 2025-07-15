@@ -9,7 +9,8 @@ import {
   useRef,
   useState,
 } from "react";
-import { CiSaveUp2, CiTrash } from "react-icons/ci";
+import { CiSaveUp2 } from "react-icons/ci";
+import { FaTrash } from "react-icons/fa6";
 
 interface PropTypes {
   className?: string;
@@ -98,12 +99,12 @@ const InputFile = (props: PropTypes) => {
               isIconOnly
               onPress={onDelete}
               disabled={isDeleting}
-              className="absolute right-2 top-2 flex h-9 w-9 items-center justify-center rounded bg-danger-100"
+              className="bg-error absolute right-2 top-2 flex h-9 w-9 items-center justify-center rounded"
             >
               {isDeleting ? (
                 <Spinner size="sm" color="secondary" />
               ) : (
-                <CiTrash className="h-5 w-5 text-danger-500" />
+                <FaTrash className="h-5 w-5 text-danger-500" />
               )}
             </Button>
           </div>

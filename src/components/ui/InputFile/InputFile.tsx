@@ -1,15 +1,9 @@
 import { cn } from "@/utils/cn";
 import { Button, Spinner } from "@heroui/react";
 import Image from "next/image";
-import {
-  ChangeEvent,
-  ReactNode,
-  useEffect,
-  useId,
-  useRef,
-  useState,
-} from "react";
-import { CiSaveUp2, CiTrash } from "react-icons/ci";
+import { ChangeEvent, ReactNode, useEffect, useId, useRef } from "react";
+import { CiSaveUp2 } from "react-icons/ci";
+import { FaTrash } from "react-icons/fa6";
 
 interface PropTypes {
   className?: string;
@@ -103,7 +97,7 @@ const InputFile = (props: PropTypes) => {
               {isDeleting ? (
                 <Spinner size="sm" color="secondary" />
               ) : (
-                <CiTrash className="h-5 w-5 text-danger-500" />
+                <FaTrash className="h-5 w-5 text-danger-500" />
               )}
             </Button>
           </div>

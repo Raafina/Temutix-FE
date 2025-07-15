@@ -32,6 +32,12 @@ const useMediaHandling = () => {
           message: error.message,
         });
       },
+      onSuccess: () => {
+        setToaster({
+          type: "success",
+          message: "Success upload file",
+        });
+      },
     });
 
   const deleteFile = async (fileUrl: string, callback: () => void) => {

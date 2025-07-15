@@ -9,7 +9,7 @@ import {
   Spinner,
   Textarea,
 } from "@heroui/react";
-import useAddCategoryModal from "./useAddCategoryModal";
+import useAddCategoryModal from "./AddCategoryModal/useAddCategoryModal";
 import { Controller } from "react-hook-form";
 import InputFile from "@/components/ui/InputFile";
 import { useEffect } from "react";
