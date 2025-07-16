@@ -22,7 +22,7 @@ export default function Home() {
         />
         <p>
           Temutix is a comprehensive online platform designed to simplify your
-          event experience. Whether you're looking for concerts, workshops,
+          event experience. Whether youre looking for concerts, workshops,
           sports matches, or cultural festivals, Temutix provides a seamless
           solution for discovering and purchasing tickets for a wide variety of
           events. With an intuitive interface and secure transaction processes,

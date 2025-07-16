@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Key, ReactNode, useCallback, useEffect } from "react";
 import { COLUMN_LIST_CATEGORY } from "./Category.constants";
 import DropdownAction from "@/components/commons/DropdownAction";
-import AddCategoryModal from "./AddCategoryModal";
+import AddCategoryModal from "./AddCategoryModal/AddCategoryModal";
 import DeleteCategoryModal from "./DeleteCategoryModal";
 
 const Category = () => {
