@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`${inter.className} mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center p-4`}
+      className={`${inter.className} mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center p-1`}
     >
       <PageHead />
       <div className="space-y-6 rounded-lg border p-10 shadow-lg">
