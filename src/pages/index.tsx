@@ -10,10 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`${inter.className} flex min-h-screen flex-col items-center justify-center px-96`}
+      className={`${inter.className} mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center p-4`}
     >
       <PageHead />
-      <div className="space-y-6 rounded-lg border p-10">
+      <div className="space-y-6 rounded-lg border p-10 shadow-lg">
         <Image
           src="/images/general/logo.svg"
           alt="Logo"
