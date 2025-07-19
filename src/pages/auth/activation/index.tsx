@@ -8,17 +8,23 @@ interface PropTypes {
 
 const ActivationPage = (props: PropTypes) => {
   return (
-    <AuthLayout title="Temutix | Activation">
+    <AuthLayout title="Acara | Activation">
       <Activation {...props} />
     </AuthLayout>
   );
 };
 
 export async function getServerSideProps(context: { query: { code: string } }) {
-  console.log(context.query.code, "tes");
+  if (!context.query.code) {
+    return {
+      props: {
+        status: "failed",
+      },
+    };
+  }
+
   try {
     const result = await authServices.activation({ code: context.query.code });
-    console.log(result.data.data, "tessss");
     if (result.data.data) {
       return {
         props: {
@@ -35,9 +41,10 @@ export async function getServerSideProps(context: { query: { code: string } }) {
   } catch (error) {
     return {
       props: {
-        status: "success",
+        status: "failed",
       },
     };
   }
 }
+
 export default ActivationPage;
