@@ -5,6 +5,7 @@ import PageHead from "@/components/commons/PageHead";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import router from "next/router";
+import { signOut } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
