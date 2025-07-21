@@ -1,3 +1,3 @@
-import DeleteBannerModal from "./deleteBannerModal";
+import DeleteBannerModal from "./DeleteBannerModal";
 
 export default DeleteBannerModal;
