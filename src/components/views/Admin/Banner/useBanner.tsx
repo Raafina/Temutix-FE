@@ -1,3 +1,4 @@
+import { useState } from "react";
 import bannerServices from "@/services/banner.service";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
@@ -5,6 +6,7 @@ import useChangeUrl from "@/hooks/useChangeUrl";
 
 const useBanner = () => {
   const router = useRouter();
+  const [selectedId, setSelectedId] = useState<string>("");
   const { currentLimit, currentPage, currentSearch } = useChangeUrl();
 
   const getBanners = async () => {
@@ -12,8 +14,7 @@ const useBanner = () => {
     if (currentSearch) {
       params += `&search=${currentSearch}`;
     }
-
-    const res = await bannerServices.getBanners();
+    const res = await bannerServices.getBanners(params);
     const { data } = res;
     return data;
   };
@@ -24,12 +25,19 @@ const useBanner = () => {
     isRefetching: isRefetchingBanner,
     refetch: refetchBanner,
   } = useQuery({
-    queryKey: ["Banners"],
+    queryKey: ["Banners", currentPage, currentLimit, currentSearch],
     queryFn: getBanners,
     enabled: router.isReady && !!currentPage && !!currentLimit,
   });
 
-  return { dataBanner, isLoadingBanner, isRefetchingBanner, refetchBanner };
+  return {
+    dataBanner,
+    isLoadingBanner,
+    isRefetchingBanner,
+    refetchBanner,
+    selectedId,
+    setSelectedId,
+  };
 };
 
 export default useBanner;

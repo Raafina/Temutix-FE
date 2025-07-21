@@ -1,7 +1,7 @@
 interface IBanner {
     _id?: string,
+    title?: string
     name?: string,
-    description?: string,
     image?: string | FileList
     isShow?: boolean | string
 }

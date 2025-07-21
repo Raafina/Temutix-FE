@@ -1,19 +1,29 @@
 import DataTable from "@/components/ui/DataTable";
 import { Chip, useDisclosure } from "@heroui/react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { Key, ReactNode, useCallback, useEffect } from "react";
 import { COLUMN_LISTS_BANNER } from "./Banner.constants";
+import Image from "next/image";
 import useBanner from "./useBanner";
 import useChangeUrl from "@/hooks/useChangeUrl";
+import AddBannerModal from "./AddBannerModal";
+import DeleteBannerModal from "./DeleteBannerModal";
 import DropdownAction from "@/components/commons/DropdownAction";
 
 const Banner = () => {
   const { push, isReady, query } = useRouter();
-  const { dataBanner, isLoadingBanner, isRefetchingBanner } = useBanner();
+  const {
+    dataBanner,
+    isLoadingBanner,
+    isRefetchingBanner,
+    refetchBanner,
+    selectedId,
+    setSelectedId,
+  } = useBanner();
 
   const addBannerModal = useDisclosure();
   const deleteBannerModal = useDisclosure();
+
   const { setUrl } = useChangeUrl();
 
   useEffect(() => {
@@ -47,6 +57,16 @@ const Banner = () => {
               {cellValue === true ? "Published" : "Not Published"}
             </Chip>
           );
+        case "actions":
+          return (
+            <DropdownAction
+              onPressButtonDetail={() => push(`/admin/banner/${banner._id}`)}
+              onPressButtonDelete={() => {
+                setSelectedId(`${banner._id}`);
+                deleteBannerModal.onOpen();
+              }}
+            />
+          );
         default:
           return cellValue as ReactNode;
       }
@@ -68,13 +88,13 @@ const Banner = () => {
           totalPages={dataBanner?.pagination.totalPages}
         />
       )}
-      {/* <AddBannerModal {...addBannerModal} refetchBanners={refetchBanners} />
+      <AddBannerModal {...addBannerModal} refetchBanner={refetchBanner} />
       <DeleteBannerModal
         {...deleteBannerModal}
         selectedId={selectedId}
         setSelectedId={setSelectedId}
-        refetchBanners={refetchBanners}
-      /> */}
+        refetchBanner={refetchBanner}
+      />
     </section>
   );
 };
