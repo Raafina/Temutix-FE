@@ -6,6 +6,7 @@ import { HeroUIProvider } from "@heroui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SessionProvider } from "next-auth/react";
 import { Inter } from "next/font/google";
+import { onErrorHandler } from "@/libs/axios/response.handler";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,9 +18,17 @@ const queryClient = new QueryClient({
     queries: {
       refetchOnWindowFocus: false,
       retry: false, // for not looping touch API
+      throwOnError(error) {
+        onErrorHandler(error as Error);
+        return false;
+      },
+    },
+    mutations: {
+      onError: onErrorHandler,
     },
   },
 });
+
 export default function App({
   Component,
   pageProps: { session, ...pageProps },

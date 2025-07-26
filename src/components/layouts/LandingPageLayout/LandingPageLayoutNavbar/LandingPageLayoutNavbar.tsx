@@ -15,9 +15,6 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
-  Listbox,
-  ListboxItem,
-  Spinner,
 } from "@heroui/react";
 import Image from "next/image";
 import { BUTTON_ITEMS, NAV_ITEMS } from "../LandingPageLayout.constants";
