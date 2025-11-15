@@ -15,6 +15,9 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
+  Listbox,
+  ListboxItem,
+  Spinner,
 } from "@heroui/react";
 import Image from "next/image";
 import { BUTTON_ITEMS, NAV_ITEMS } from "../LandingPageLayout.constants";
@@ -29,7 +32,15 @@ import { IEvent } from "@/types/Event";
 const LandingPageLayoutNavbar = () => {
   const router = useRouter();
   const session = useSession();
-  const { dataProfile } = useLandingPageLayoutNavbar();
+  const {
+    dataProfile,
+    dataEventsSearch,
+    handleSearch,
+    isLoadingEventsSearch,
+    search,
+    setSearch,
+    isRefetchingEventsSearch,
+  } = useLandingPageLayoutNavbar();
 
   return (
     <Navbar
@@ -77,10 +88,10 @@ const LandingPageLayoutNavbar = () => {
             className="w-[300px]"
             placeholder="Search Event"
             startContent={<CiSearch />}
-            onClear={() => {}}
-            onChange={() => {}}
+            onClear={() => setSearch("")}
+            onChange={handleSearch}
           />
-          {/* {search !== "" && (
+          {search !== "" && (
             <Listbox
               items={dataEventsSearch?.data || []}
               className="absolute right-0 top-12 rounded-xl border bg-white"
@@ -108,7 +119,7 @@ const LandingPageLayoutNavbar = () => {
                 </ListboxItem>
               )}
             </Listbox>
-          )} */}
+          )}
         </NavbarItem>
         {session.status === "authenticated" ? (
           <NavbarItem className="hidden lg:block">
