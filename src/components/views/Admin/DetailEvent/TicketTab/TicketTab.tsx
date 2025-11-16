@@ -7,7 +7,7 @@ import {
   useDisclosure,
 } from "@heroui/react";
 import DataTable from "@/components/ui/DataTable";
-import { COLUMN_LISTS_TICKET } from "./TicketTab.constant";
+import { COLUMN_LISTS_TICKET } from "./TicketTab.constants";
 import useTicketTab from "./useTicketTab";
 import { ReactNode, useCallback, Key } from "react";
 import { convertIDR } from "@/utils/currency";
