@@ -16,9 +16,6 @@ import Script from "next/script";
 import environment from "@/config/environment";
 
 const DetailEvent = () => {
-  {
-    console.log(environment.MIDTRANS_SNAP_URL, environment.MIDTRANS_CLIENT_KEY);
-  }
   const {
     dataEvent,
     dataTicket,
