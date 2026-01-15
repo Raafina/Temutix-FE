@@ -11,6 +11,9 @@ interface PropTypes {
 
 const HomeEventList = (props: PropTypes) => {
   const { title, events, isLoading, urlMore = "/" } = props;
+
+  const safeEvents = Array.isArray(events) ? events : [];
+
   return (
     <section className="mb-16">
       <div className="mb-2 flex items-center justify-between px-6 lg:px-0">
@@ -21,17 +24,17 @@ const HomeEventList = (props: PropTypes) => {
       </div>
       <div className="grid auto-cols-[20rem] grid-flow-col gap-6 overflow-x-auto py-2 pb-4 lg:grid-cols-4 lg:px-1">
         {!isLoading
-          ? events?.map((event) => (
+          ? safeEvents.map((event) => (
               <CardEvent
+                key={event._id}
                 event={event}
-                key={`card-event-${event._id}`}
                 className="first:ml-6 last:mr-6 lg:first:ml-0 lg:last:mr-0"
               />
             ))
           : Array.from({ length: 4 }).map((_, index) => (
               <CardEvent
                 key={`card-event-loading-${index}`}
-                isLoading={isLoading}
+                isLoading
                 className="first:ml-6 last:mr-6 lg:first:ml-0 lg:last:mr-0"
               />
             ))}

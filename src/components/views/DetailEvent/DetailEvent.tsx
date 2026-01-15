@@ -41,7 +41,10 @@ const DetailEvent = () => {
       />
 
       <Skeleton
-        className="w-full rounded-lg md:h-6 md:w-1/4"
+        className={cn(
+          "rounded-lg md:h-6",
+          !!dataEvent?.name ? "w-full" : "w-1/4",
+        )}
         isLoaded={!!dataEvent?.name}
       >
         <Breadcrumbs className="flex">
@@ -52,17 +55,20 @@ const DetailEvent = () => {
       </Skeleton>
 
       <section className="mt-4 flex flex-col gap-10 lg:flex-row">
-        <div className="h-full w-full md:w-4/6">
+        <div className="h-full md:w-4/6">
           <Skeleton
             isLoaded={!!dataEvent?.name}
-            className="mb-2 rounded-lg md:h-8"
+            className={cn(
+              "mb-2 rounded-lg",
+              !!dataEvent?.name ? "w-full" : "h-8 w-1/2",
+            )}
           >
             <h1 className="text-2xl font-semibold text-secondary">
               {dataEvent?.name}
             </h1>
           </Skeleton>
           <Skeleton
-            className="mb-2 w-full rounded-lg md:h-6 md:w-1/2"
+            className="mb-1 w-full rounded-lg md:h-6 md:w-1/2"
             isLoaded={!!dataEvent?.startDate || !!dataEvent?.endDate}
           >
             <div className="flex items-center gap-2 text-foreground-500">
