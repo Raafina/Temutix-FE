@@ -15,6 +15,7 @@ import DetailEventCart from "./DetailEventCart";
 import Script from "next/script";
 import environment from "@/config/environment";
 import Head from "next/head";
+import { cn } from "@/utils/cn";
 
 const DetailEvent = () => {
   const {
@@ -104,7 +105,10 @@ const DetailEvent = () => {
                 About Event
               </h2>
               <Skeleton
-                className="mt-2 w-full rounded-lg md:h-32"
+                className={cn(
+                  "mt-2 w-full rounded-lg",
+                  !dataEvent?.description && "h-24 sm:h-28 md:h-32",
+                )}
                 isLoaded={!!dataEvent?.description}
               >
                 <p className="text-foreground-500">{dataEvent?.description}</p>
