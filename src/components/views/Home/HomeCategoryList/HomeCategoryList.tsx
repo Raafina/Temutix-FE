@@ -6,6 +6,7 @@ import Link from "next/link";
 interface PropTypes {
   categories: ICategory[];
   isLoading: boolean;
+  urlMore?: string;
 }
 
 const HomeCategoryList = (props: PropTypes) => {
@@ -20,7 +21,7 @@ const HomeCategoryList = (props: PropTypes) => {
           {!isLoading
             ? categories?.map((category) => (
                 <Link
-                  href={`/`}
+                  href={`/event?category=${category._id}`}
                   key={`category-${category._id}`}
                   className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border p-4"
                 >

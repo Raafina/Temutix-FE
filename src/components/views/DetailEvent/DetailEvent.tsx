@@ -14,6 +14,7 @@ import DetailEventTicket from "./DetailEventTicket";
 import DetailEventCart from "./DetailEventCart";
 import Script from "next/script";
 import environment from "@/config/environment";
+import Head from "next/head";
 
 const DetailEvent = () => {
   const {
@@ -28,13 +29,21 @@ const DetailEvent = () => {
   } = useDetailEvent();
   return (
     <div className="px-8 md:px-0">
+      <Head>
+        <title>{dataEvent?.name}</title>
+      </Head>
+
       <Script
         src={environment.MIDTRANS_SNAP_URL}
         data-client-key={environment.MIDTRANS_CLIENT_KEY}
         strategy="afterInteractive"
       />
-      <Skeleton className="h-6 w-1/4 rounded-lg" isLoaded={!!dataEvent?.name}>
-        <Breadcrumbs>
+
+      <Skeleton
+        className="w-full rounded-lg md:h-6 md:w-1/4"
+        isLoaded={!!dataEvent?.name}
+      >
+        <Breadcrumbs className="flex">
           <BreadcrumbItem href="/">Home</BreadcrumbItem>
           <BreadcrumbItem href="/event">Event</BreadcrumbItem>
           <BreadcrumbItem>{dataEvent?.name}</BreadcrumbItem>
@@ -42,21 +51,21 @@ const DetailEvent = () => {
       </Skeleton>
 
       <section className="mt-4 flex flex-col gap-10 lg:flex-row">
-        <div className="w-full lg:w-4/6">
+        <div className="h-full w-full md:w-4/6">
           <Skeleton
             isLoaded={!!dataEvent?.name}
-            className="mb-2 h-8 rounded-lg"
+            className="mb-2 rounded-lg md:h-8"
           >
             <h1 className="text-2xl font-semibold text-secondary">
               {dataEvent?.name}
             </h1>
           </Skeleton>
           <Skeleton
-            className="mb-2 h-6 w-1/2 rounded-lg"
+            className="mb-2 w-full rounded-lg md:h-6 md:w-1/2"
             isLoaded={!!dataEvent?.startDate || !!dataEvent?.endDate}
           >
             <div className="flex items-center gap-2 text-foreground-500">
-              <FaClock width={16} />
+              <FaClock width={16} className="shrink-0" />
               <p>
                 {convertTime(dataEvent?.startDate)} -{" "}
                 {convertTime(dataEvent?.endDate)}
@@ -64,11 +73,11 @@ const DetailEvent = () => {
             </div>
           </Skeleton>
           <Skeleton
-            className="mb-2 h-6 w-1/2 rounded-lg"
+            className="mb-2 w-full rounded-lg md:h-6 md:w-1/2"
             isLoaded={!!dataEvent?.isOnline || !!dataEvent?.location}
           >
             <div className="flex items-center gap-2 text-foreground-500">
-              <FaLocationDot width={16} />
+              <FaLocationDot width={16} className="shrink-0" />
               <p>
                 {dataEvent?.isOnline ? "Online" : "Offline"}{" "}
                 {dataEvent?.isOnline
@@ -95,7 +104,7 @@ const DetailEvent = () => {
                 About Event
               </h2>
               <Skeleton
-                className="mt-2 h-32 w-full rounded-lg"
+                className="mt-2 w-full rounded-lg md:h-32"
                 isLoaded={!!dataEvent?.description}
               >
                 <p className="text-foreground-500">{dataEvent?.description}</p>

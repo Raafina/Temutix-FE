@@ -32,6 +32,7 @@ const Home = () => {
         title="Latest Event"
         events={dataLatestEvents?.data}
         isLoading={isLoadingLatestEvents}
+        urlMore="/event?isLatest=true"
       />
       <HomeCategoryList
         categories={dataCategories?.data}
