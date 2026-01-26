@@ -23,11 +23,11 @@ The platform also provides structured event and ticket management.
 <ol>
     <li>
         <p>Clone this repository</p>
-        <p><pre>git clone https://github.com/Raafina/Temutix-FE.git</pre></p>
+        <p><pre>git clone https://github.com/Raafina/TemuTix-FE.git</pre></p>
     </li>
     <li>
         <p>Navigate to the project directory</p>
-        <p><pre>cd Temutix-FE</pre></p>
+        <p><pre>cd TemuTix-FE</pre></p>
     </li>
     <li>
         <p>Install dependencies</p>
