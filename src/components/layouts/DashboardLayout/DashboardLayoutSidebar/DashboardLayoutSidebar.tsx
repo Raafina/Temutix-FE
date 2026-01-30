@@ -31,16 +31,18 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
         )}
       >
         <div>
-          <div className="flex w-full justify-center">
+          <div className="flex w-full items-center justify-center gap-2">
             <Image
               src="/images/general/logo.png"
               alt="logo"
-              width={180}
-              height={60}
-              className="mb-6 w-32"
+              width={100}
+              height={100}
+              className="w-11"
               onClick={() => router.push("/")}
             />
+            <p className="text-xl font-bold text-primary">TemuTix</p>
           </div>
+          <div className="mt-4 h-px w-full bg-primary" />
           <Listbox
             items={sidebarItems}
             variant="solid"
@@ -51,7 +53,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
                 key={item.key}
                 value={item.key}
                 className={cn("my-1 h-12 text-2xl", {
-                  "bg-secondary text-white": router.pathname.startsWith(
+                  "bg-primary text-secondary": router.pathname.startsWith(
                     item.href,
                   ),
                 })}

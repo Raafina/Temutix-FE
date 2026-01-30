@@ -33,13 +33,16 @@ const HomeSlider = (props: PropTypes) => {
         >
           {banners?.map((banner: IBanner) => (
             <SwiperSlide key={banner._id}>
-              <Image
-                src={`${banner.image}`}
-                alt={`${banner.title}`}
-                className="h-[80%] w-full rounded-2xl object-cover lg:h-[90%]"
-                width={1920}
-                height={800}
-              />
+              <div className="relative aspect-[16/3.5] w-full">
+                <Image
+                  src={`${banner.image}`}
+                  alt={`${banner.title}`}
+                  fill
+                  className="rounded-2xl object-cover"
+                  priority={banners.indexOf(banner) === 0}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
