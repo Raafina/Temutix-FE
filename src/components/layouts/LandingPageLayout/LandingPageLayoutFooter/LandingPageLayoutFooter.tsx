@@ -6,18 +6,13 @@ const LandingPageLayoutFooter = () => {
   return (
     <div className="bg-slate-900">
       <div className="mx-auto flex max-w-7xl flex-col justify-between px-5 py-10 lg:flex-row lg:text-left">
-        <div className="flex gap-4 md:flex-col">
-          <Image
-            src={"/images/general/logo.png"}
-            alt="logo"
-            className="mb-10 w-10 md:mb-4 lg:mb-0 lg:w-32"
-            width={100}
-            height={100}
-          />
-          <p className="hidden self-center text-xl font-bold text-secondary lg:flex">
-            TemuTix
-          </p>
-        </div>
+        <Image
+          src={"/images/general/logo.png"}
+          alt="logo"
+          className="mb-10 w-10 md:mb-4 lg:mb-0 lg:w-32"
+          width={100}
+          height={100}
+        />
         <div className="mb-4 flex flex-col gap-4 lg:mb-0">
           <div>
             <h4 className="text-xl font-bold text-secondary">

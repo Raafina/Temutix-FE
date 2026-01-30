@@ -53,9 +53,7 @@ const LandingPageLayoutNavbar = () => {
             height={100}
             className="w-12 cursor-pointer"
           />
-          <p className="hidden text-xl font-bold text-primary md:flex">
-            TemuTix
-          </p>
+          <p className="text-xl font-bold text-primary">TemuTix</p>
         </NavbarBrand>
         <NavbarContent className="hidden lg:flex">
           {NAV_ITEMS.map((item) => (

@@ -20,13 +20,6 @@ const Login = () => {
     <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row lg:gap-20">
       <div className="hidden w-full flex-col items-center justify-center gap-10 md:flex lg:w-1/3">
         <Image
-          src="/images/general/logo.png"
-          alt="logo"
-          className="w-1/3"
-          width={100}
-          height={100}
-        />
-        <Image
           src="/images/illustration/login.svg"
           alt="logo"
           className="w-full"

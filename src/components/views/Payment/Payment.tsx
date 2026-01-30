@@ -36,7 +36,7 @@ const Payment = () => {
       </div>
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-3xl font-bold capitalize text-primary">
-          Transaction {status}
+          Transaction Success {status}
         </h1>
         <Button
           className="mt-4 w-fit"
@@ -44,7 +44,7 @@ const Payment = () => {
           color="primary"
           onPress={() => router.push(`/member/transaction/${order_id}`)}
         >
-          Check your transaction here
+          Check your transaction here.
         </Button>
       </div>
     </div>

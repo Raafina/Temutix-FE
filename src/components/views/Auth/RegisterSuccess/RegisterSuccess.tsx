@@ -19,7 +19,7 @@ const RegisterSuccess = () => {
           Create Account Success
         </h1>
         <p className="text-xl font-bold text-black">
-          Check your email for account activation
+          Check your email for account activation.
         </p>
         <Button
           className="mt-4 w-fit"

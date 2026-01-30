@@ -28,7 +28,7 @@ const HomeEventList = (props: PropTypes) => {
               <CardEvent
                 key={event._id}
                 event={event}
-                className="first:ml-6 last:mr-6 lg:first:ml-0 lg:last:mr-0"
+                className="border first:ml-6 last:mr-6 hover:shadow-secondary lg:first:ml-0 lg:last:mr-0"
               />
             ))
           : Array.from({ length: 4 }).map((_, index) => (
