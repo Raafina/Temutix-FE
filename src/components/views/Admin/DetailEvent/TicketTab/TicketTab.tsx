@@ -65,7 +65,7 @@ const TicketTab = () => {
               Manage ticket of this event
             </p>
           </div>
-          <Button color="secondary" onPress={addTicketModal.onOpen}>
+          <Button color="primary" onPress={addTicketModal.onOpen}>
             Add New Ticket
           </Button>
         </CardHeader>

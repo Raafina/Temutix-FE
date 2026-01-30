@@ -20,7 +20,7 @@ const Register = () => {
     <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row lg:gap-20">
       <div className="hidden w-full flex-col items-center justify-center gap-10 md:flex lg:w-1/3">
         <Image
-          src="/images/general/logo.svg"
+          src="/images/general/logo.png"
           alt="logo"
           className="w-1/3"
           width={100}
@@ -37,7 +37,7 @@ const Register = () => {
       <div>
         <Card>
           <CardBody className="gap-4 p-8">
-            <h2 className="text-xl font-bold text-secondary">Create Account</h2>
+            <h2 className="text-xl font-bold text-primary">Create Account</h2>
             {errors.root && (
               <p className="font medium mb-2 text-red-500">
                 {errors?.root?.message}
@@ -147,7 +147,7 @@ const Register = () => {
                   />
                 )}
               />
-              <Button color="secondary" size="lg" type="submit">
+              <Button color="primary" size="lg" type="submit">
                 {isPendingRegister ? (
                   <Spinner color="white" size="sm" />
                 ) : (
@@ -158,7 +158,7 @@ const Register = () => {
                 Alrady have an account?{" "}
                 <Link
                   href="/auth/login"
-                  className="text-secondary hover:font-bold hover:underline"
+                  className="text-primary hover:font-bold hover:underline"
                 >
                   Login
                 </Link>

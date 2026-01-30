@@ -70,7 +70,7 @@ const DeleteEventModal = (props: PropTypes) => {
             Cancel
           </Button>
           <Button
-            color="secondary"
+            color="primary"
             type="submit"
             disabled={isPendingMutateDeleteEvent}
             onPress={() => mutateDeleteEvent(selectedId)}

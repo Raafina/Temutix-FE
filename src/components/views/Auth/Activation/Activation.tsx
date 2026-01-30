@@ -13,7 +13,7 @@ const Activation = (props: PropTypes) => {
     <div className="flex w-screen flex-col items-center justify-center gap-10 p-4">
       <div className="flex flex-col items-center justify-center gap-10">
         <Image
-          src="/images/general/logo.svg"
+          src="/images/general/logo.png"
           alt="logo"
           width={180}
           height={180}
@@ -30,7 +30,7 @@ const Activation = (props: PropTypes) => {
         />
       </div>
       <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-3xl font-bold text-secondary-500">
+        <h1 className="text-3xl font-bold text-primary">
           {status === "success" ? "Activation Success" : "Activation Failed"}
         </h1>
         <p className="text-xl font-bold text-default-500">
@@ -41,7 +41,7 @@ const Activation = (props: PropTypes) => {
         <Button
           className="mt-4 w-fit"
           variant="solid"
-          color="secondary"
+          color="primary"
           onPress={() => {
             router.push("/");
           }}

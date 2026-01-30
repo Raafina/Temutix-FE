@@ -64,7 +64,7 @@ const DetailEventCart = (props: PropTypes) => {
           <Divider />
           <Button
             fullWidth
-            color="secondary"
+            color="primary"
             size="md"
             disabled={cart.quantity === 0 || isLoading}
             className="disabled:bg-opacity-25"
@@ -76,7 +76,7 @@ const DetailEventCart = (props: PropTypes) => {
       ) : (
         <CardBody>
           <Button
-            color="secondary"
+            color="primary"
             size="lg"
             as={Link}
             href={`/auth/login?callbackUrl=/event/${router.query.slug}`}

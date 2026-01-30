@@ -68,7 +68,7 @@ const DataTable = (props: PropTypes) => {
           />
         )}
         {buttonTopContentLabel && (
-          <Button color="secondary" onPress={onClickButtonTopContent}>
+          <Button color="primary" onPress={onClickButtonTopContent}>
             {buttonTopContentLabel}
           </Button>
         )}
@@ -110,7 +110,7 @@ const DataTable = (props: PropTypes) => {
           <Pagination
             isCompact
             showControls
-            color="secondary"
+            color="primary"
             page={Number(currentPage)}
             total={totalPages}
             onChange={handleChangePage}
@@ -154,7 +154,7 @@ const DataTable = (props: PropTypes) => {
         items={data}
         loadingContent={
           <div className="flex h-full w-full items-center justify-center bg-foreground-700/30 backdrop-blur-sm">
-            <Spinner color="secondary" label="Loading data..." />
+            <Spinner color="primary" label="Loading data..." />
           </div>
         }
       >

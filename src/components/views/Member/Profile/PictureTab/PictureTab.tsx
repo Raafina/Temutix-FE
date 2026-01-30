@@ -94,7 +94,7 @@ const PictureTab = (props: PropTypes) => {
           />
           <Button
             type="submit"
-            color="secondary"
+            color="primary"
             className="mt-2 disabled:bg-default-500"
             disabled={isPendingMutateUploadFile || isPendingUpdate || !preview}
           >

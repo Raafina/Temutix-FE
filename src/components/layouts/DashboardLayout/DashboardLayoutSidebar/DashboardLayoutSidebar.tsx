@@ -33,7 +33,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
         <div>
           <div className="flex w-full justify-center">
             <Image
-              src="/images/general/logo.svg"
+              src="/images/general/logo.png"
               alt="logo"
               width={180}
               height={60}
@@ -69,7 +69,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
         </div>
         <div className="flex items-center p-1">
           <Button
-            color="secondary"
+            color="primary"
             fullWidth
             variant="light"
             className="flex justify-start rounded-lg px-2 py-1.5"

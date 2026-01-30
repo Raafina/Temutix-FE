@@ -20,7 +20,7 @@ const Login = () => {
     <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row lg:gap-20">
       <div className="hidden w-full flex-col items-center justify-center gap-10 md:flex lg:w-1/3">
         <Image
-          src="/images/general/logo.svg"
+          src="/images/general/logo.png"
           alt="logo"
           className="w-1/3"
           width={100}
@@ -37,9 +37,9 @@ const Login = () => {
       <div>
         <Card>
           <CardBody className="gap-4 p-8">
-            <h2 className="text-xl font-bold text-secondary">Login</h2>
+            <h2 className="text-xl font-bold text-primary">Login</h2>
             {errors.root && (
-              <p className="font medium mb-2 text-secondary">
+              <p className="font medium mb-2 text-primary">
                 {errors?.root?.message}
               </p>
             )}
@@ -90,7 +90,7 @@ const Login = () => {
                 )}
               />
 
-              <Button color="secondary" size="lg" type="submit">
+              <Button color="primary" size="lg" type="submit">
                 {isPendingLogin ? <Spinner color="white" size="sm" /> : "Login"}
               </Button>
             </form>
@@ -98,7 +98,7 @@ const Login = () => {
               Don&apos;t have an account?{" "}
               <Link
                 href="/auth/register"
-                className="text-secondary hover:font-bold hover:underline"
+                className="text-primary hover:font-bold hover:underline"
               >
                 Register Here
               </Link>

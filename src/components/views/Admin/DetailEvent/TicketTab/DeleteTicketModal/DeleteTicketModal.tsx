@@ -71,7 +71,7 @@ const DeleteTicketModal = (props: PropTypes) => {
             Cancel
           </Button>
           <Button
-            color="secondary"
+            color="primary"
             type="submit"
             disabled={isPendingMutateDeleteTicket}
             onPress={() => mutateDeleteTicket(`${selectedDataTicket?._id}`)}

@@ -63,7 +63,7 @@ const DetailEvent = () => {
               !!dataEvent?.name ? "w-full" : "h-8 w-1/2",
             )}
           >
-            <h1 className="text-2xl font-semibold text-secondary">
+            <h1 className="text-2xl font-semibold text-primary">
               {dataEvent?.name}
             </h1>
           </Skeleton>

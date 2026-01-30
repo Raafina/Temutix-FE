@@ -51,14 +51,17 @@ const LandingPageLayoutNavbar = () => {
       shouldHideOnScroll
     >
       <div className="flex items-center gap-8">
-        <NavbarBrand as={Link} href="/">
+        <NavbarBrand as={Link} href="/" className="gap-x-2">
           <Image
-            src="/images/general/logo.svg"
+            src="/images/general/logo.png"
             alt="logo"
             width={100}
-            height={50}
-            className="cursor-pointer"
+            height={100}
+            className="w-12 cursor-pointer"
           />
+          <p className="hidden text-xl font-bold text-primary md:flex">
+            TemuTix
+          </p>
         </NavbarBrand>
         <NavbarContent className="hidden lg:flex">
           {NAV_ITEMS.map((item) => (
@@ -66,12 +69,9 @@ const LandingPageLayoutNavbar = () => {
               key={`nav-${item.label}`}
               as={Link}
               href={item.href}
-              className={cn(
-                "font-medium text-default-700 hover:text-secondary",
-                {
-                  "font-bold text-secondary-500": router.pathname === item.href,
-                },
-              )}
+              className={cn("font-medium text-default-700 hover:text-primary", {
+                "font-bold text-primary": router.pathname === item.href,
+              })}
             >
               {item.label}
             </NavbarItem>
@@ -115,7 +115,7 @@ const LandingPageLayoutNavbar = () => {
                 )
               ) : (
                 <ListboxItem key="loading">
-                  <Spinner color="secondary" size="sm" />
+                  <Spinner color="primary" size="sm" />
                 </ListboxItem>
               )}
             </Listbox>
@@ -156,7 +156,7 @@ const LandingPageLayoutNavbar = () => {
               <NavbarItem key={`button-${item.label}`}>
                 <Button
                   as={Link}
-                  color="secondary"
+                  color="primary"
                   href={item.href}
                   variant={item.variant as ButtonProps["variant"]}
                 >
@@ -173,9 +173,9 @@ const LandingPageLayoutNavbar = () => {
               <Link
                 href={item.href}
                 className={cn(
-                  "font-medium text-default-700 hover:text-secondary",
+                  "font-medium text-default-700 hover:text-primary",
                   {
-                    "font-bold text-secondary": router.pathname === item.href,
+                    "font-bold text-primary": router.pathname === item.href,
                   },
                 )}
               >
@@ -192,14 +192,14 @@ const LandingPageLayoutNavbar = () => {
               >
                 <Link
                   href="/admin/event"
-                  className="font-medium text-default-700 hover:text-secondary"
+                  className="font-medium text-default-700 hover:text-primary"
                 >
                   Admin
                 </Link>
               </NavbarMenuItem>
               <NavbarMenuItem>
                 <Link
-                  className="font-medium text-default-700 hover:text-secondary"
+                  className="font-medium text-default-700 hover:text-primary"
                   href="/member/profile"
                 >
                   Profile
@@ -207,7 +207,7 @@ const LandingPageLayoutNavbar = () => {
               </NavbarMenuItem>
               <NavbarMenuItem>
                 <Button
-                  color="secondary"
+                  color="primary"
                   onPress={() => signOut()}
                   className="mt-2 w-full"
                   variant="bordered"
@@ -223,7 +223,7 @@ const LandingPageLayoutNavbar = () => {
                 <NavbarMenuItem key={`button-${item.label}`}>
                   <Button
                     as={Link}
-                    color="secondary"
+                    color="primary"
                     href={item.href}
                     fullWidth
                     variant={item.variant as ButtonProps["variant"]}

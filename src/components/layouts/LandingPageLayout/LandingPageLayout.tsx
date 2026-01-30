@@ -15,7 +15,7 @@ const LandingPageLayout = (props: PropTypes) => {
     <Fragment>
       <PageHead title={title} />
       <LandingPageLayoutNavbar />
-      <div className="max-w-screen-2xl py-10 2xl:container md:p-6">
+      <div className="mx-auto max-w-screen-2xl py-10 2xl:container md:p-6">
         {children}
       </div>
       <LandingPageLayoutFooter />

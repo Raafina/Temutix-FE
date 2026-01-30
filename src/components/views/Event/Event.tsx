@@ -44,7 +44,7 @@ const Event = () => {
           !isLoadingEvents &&
           !isRefetchingEvents && (
             <div className="flex flex-col items-center justify-center gap-4 py-20">
-              <h2 className="text-center text-2xl font-bold text-secondary-500">
+              <h2 className="text-center text-2xl font-bold text-primary">
                 Event is empty
               </h2>
             </div>

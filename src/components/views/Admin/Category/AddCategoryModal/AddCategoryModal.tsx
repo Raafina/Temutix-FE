@@ -124,7 +124,7 @@ const AddCategoryModal = (props: PropTypes) => {
             >
               Cancel
             </Button>
-            <Button color="secondary" type="submit" disabled={disabledSubmit}>
+            <Button color="primary" type="submit" disabled={disabledSubmit}>
               {isPendingMutateAddCategory ? (
                 <Spinner size="sm" color="white" />
               ) : (

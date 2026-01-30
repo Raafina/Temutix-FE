@@ -204,7 +204,7 @@ const LocationTab = (props: PropTypes) => {
             )}
           </Skeleton>
           <Button
-            color="secondary"
+            color="primary"
             className="mt-2 disabled:bg-default-500"
             type="submit"
             disabled={isPendingUpdate || !dataEvent?._id}

@@ -70,7 +70,7 @@ const DeleteBannerModal = (props: PropTypes) => {
             Cancel
           </Button>
           <Button
-            color="secondary"
+            color="primary"
             type="submit"
             disabled={isPendingMutateDeleteBanner}
             onPress={() => mutateDeleteBanner(selectedId)}

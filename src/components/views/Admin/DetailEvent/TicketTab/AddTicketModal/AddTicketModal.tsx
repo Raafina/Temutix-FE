@@ -128,7 +128,7 @@ const AddTicketModal = (props: PropTypes) => {
               Cancel
             </Button>
             <Button
-              color="secondary"
+              color="primary"
               type="submit"
               disabled={isPendingMutateAddTicket}
             >

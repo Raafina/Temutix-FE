@@ -59,7 +59,7 @@ const DeleteTransactionModal = (props: PropTypes) => {
         </ModalBody>
         <ModalFooter>
           <Button
-            color="secondary"
+            color="primary"
             variant="flat"
             onPress={() => {
               onClose();
@@ -70,7 +70,7 @@ const DeleteTransactionModal = (props: PropTypes) => {
             Cancel
           </Button>
           <Button
-            color="secondary"
+            color="primary"
             type="submit"
             disabled={isPendingMutateDeleteTransaction}
             onPress={() => mutateDeleteTransaction(selectedId)}
