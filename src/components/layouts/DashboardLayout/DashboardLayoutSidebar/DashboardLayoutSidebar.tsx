@@ -31,17 +31,19 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
         )}
       >
         <div>
-          <div className="flex w-full items-center justify-center gap-2">
+          <Link
+            className="flex w-full items-center justify-center gap-2"
+            href="/"
+          >
             <Image
               src="/images/general/logo.png"
               alt="logo"
               width={100}
               height={100}
               className="w-11"
-              onClick={() => router.push("/")}
             />
             <p className="text-xl font-bold text-primary">TemuTix</p>
-          </div>
+          </Link>
           <div className="mt-3 h-px w-full bg-primary" />
           <Listbox
             items={sidebarItems}

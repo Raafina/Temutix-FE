@@ -26,12 +26,17 @@ const Event = () => {
         <div className="mb-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {!isLoadingEvents && !isRefetchingEvents
             ? dataEvents?.data?.map((event: IEvent) => (
-                <CardEvent event={event} key={`card-event-${event._id}`} />
+                <CardEvent
+                  event={event}
+                  key={`card-event-${event._id}`}
+                  className="border transition-all duration-300 ease-out first:ml-6 last:mr-6 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 lg:first:ml-0 lg:last:mr-0"
+                />
               ))
             : Array.from({ length: 3 }).map((_, index) => (
                 <CardEvent
                   key={`card-event-loading-${index}`}
                   isLoading={true}
+                  className=""
                 />
               ))}
         </div>
