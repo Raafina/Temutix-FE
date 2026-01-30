@@ -26,7 +26,7 @@ const HomeCategoryList = (props: PropTypes) => {
                 <Link
                   href={`/event?category=${category._id}`}
                   key={`category-${category._id}`}
-                  className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border p-4"
+                  className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border p-4 transition-all duration-300 ease-out first:ml-6 last:mr-6 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 lg:first:ml-0 lg:last:mr-0"
                 >
                   <Image
                     src={`${category.icon}`}

@@ -26,7 +26,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
     <>
       <div
         className={cn(
-          "fixed z-50 flex h-screen w-full max-w-[300px] -translate-x-full flex-col justify-between border-r-1 border-default-200 bg-white px-4 py-6 transition-all lg:relative lg:translate-x-0",
+          "fixed z-50 flex h-screen w-full max-w-[300px] -translate-x-full flex-col justify-between border-r-1 border-default-200 bg-white px-2 py-3 transition-all lg:relative lg:translate-x-0",
           { "translate-x-0": isOpen },
         )}
       >
@@ -42,7 +42,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
             />
             <p className="text-xl font-bold text-primary">TemuTix</p>
           </div>
-          <div className="mt-4 h-px w-full bg-primary" />
+          <div className="mt-3 h-px w-full bg-primary" />
           <Listbox
             items={sidebarItems}
             variant="solid"
@@ -52,7 +52,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
               <ListboxItem
                 key={item.key}
                 value={item.key}
-                className={cn("my-1 h-12 text-2xl", {
+                className={cn("my-0 h-12 text-2xl", {
                   "bg-primary text-secondary": router.pathname.startsWith(
                     item.href,
                   ),

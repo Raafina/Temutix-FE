@@ -19,8 +19,16 @@ const LandingPageLayoutFooter = () => {
               Customer Service
             </h4>
             <p className="text-white">
-              <Link href="mailto:temutix@example.com">temutix@example.com</Link>{" "}
-              | <Link href="tel:+621234567890">+62 1234 5678 90</Link>
+              <Link
+                href="mailto:temutix@example.com"
+                className="hover:underline"
+              >
+                temutix@example.com
+              </Link>{" "}
+              |{" "}
+              <Link href="tel:+621234567890" className="hover:underline">
+                +62 1234 5678 90
+              </Link>
             </p>
           </div>
           <div>
@@ -35,7 +43,7 @@ const LandingPageLayoutFooter = () => {
             <Link
               key={`footer-nav-${item.label}`}
               href={item.href}
-              className="cursor-pointer text-white hover:text-white"
+              className="cursor-pointer text-white hover:underline"
             >
               {item.label}
             </Link>
