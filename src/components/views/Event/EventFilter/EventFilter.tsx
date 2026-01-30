@@ -33,7 +33,7 @@ const EventFilter = () => {
 
   return (
     <div className="h-fit w-full rounded-xl border p-4 lg:sticky lg:top-20 lg:w-80">
-      <h4 className="text-xl font-semibold">Filter</h4>
+      <h4 className="text-xl font-semibold text-primary">Filter</h4>
       <div className="mt-4 flex flex-col gap-4">
         {isSuccessGetCategory ? (
           <Fragment>

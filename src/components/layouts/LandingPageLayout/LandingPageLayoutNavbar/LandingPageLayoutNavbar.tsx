@@ -43,13 +43,7 @@ const LandingPageLayoutNavbar = () => {
   } = useLandingPageLayoutNavbar();
 
   return (
-    <Navbar
-      maxWidth="full"
-      className=""
-      isBordered
-      isBlurred={false}
-      shouldHideOnScroll
-    >
+    <Navbar maxWidth="xl" isBordered isBlurred={false} shouldHideOnScroll>
       <div className="flex items-center gap-8">
         <NavbarBrand as={Link} href="/" className="gap-x-2">
           <Image
