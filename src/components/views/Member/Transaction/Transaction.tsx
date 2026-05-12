@@ -33,7 +33,7 @@ const Transaction = () => {
         case "status":
           return (
             <Chip
-              color={cellValue ? "success" : "warning"}
+              color={cellValue == "completed" ? "success" : "warning"}
               size="sm"
               variant="flat"
             >
